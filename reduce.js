@@ -43,8 +43,20 @@ const pets = [
     }
 ]
 
+//Retornando apenas o cálculo de um resultado
 const totalWight = pets.reduce((total, pet) => {
     return total + pet.weight
 }, 0 )
 
 console.log(totalWight);
+
+//Retornando mais de um cálculo
+
+const totals = pets.reduce((total, pet) => {
+    return {
+        totalAge: total.totalAge + pet.age,
+        totalWeight: total.totalWeight + pet.weight
+    }
+}, { totalAge:0, totalWeight: 0 });
+
+console.log(totals);
